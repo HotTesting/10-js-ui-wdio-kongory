@@ -1,4 +1,4 @@
-import {shared} from './user'
+import { shared } from './user'
 
 describe('Admin', function () {
 
@@ -7,5 +7,5 @@ describe('Admin', function () {
         //...
     })
 
-    shared({username: 'Admin'})
+    shared({ username: 'Admin' })
 })

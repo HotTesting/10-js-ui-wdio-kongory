@@ -1,4 +1,4 @@
-const userObj = {username: 'User'}
+const userObj = { username: 'User' }
 
 export function shared(user: any = userObj) {
     describe('User', function () {

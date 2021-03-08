@@ -93,29 +93,29 @@ describe("Contact us form", function () {
     });
 });
 
-// Each implemented test gives you 20 points 
 describe("Items search", function () {
     it("should show results in case multiple items matches", function () {
         browser.url('/')
 
-        const searchInput=$('[name="search"]')
+        const searchInput = $('[name="search"]')
         searchInput.setValue('Mac')
 
-        const searchButton=$('#search button')
+        const searchButton = $('#search button')
         searchButton.click()
 
-        expect($$('.product-thumb h4')).toHaveTextContaining('Mac',{wait:4000})
+        expect($$('.product-thumb h4')).toHaveTextContaining('Mac', { wait: 4000 })
     });
 
     it("should redirect to 'no matching results' in case no items matched", function () {
         browser.url('/')
 
-        const searchInput=$('[name="search"]')
+        const searchInput = $('[name="search"]')
         searchInput.setValue('window phone')
 
-        const searchButton=$('#search button')
+        const searchButton = $('#search button')
         searchButton.click()
 
-        expect($$('#content p:nth-of-type(2)')).toHaveTextContaining('There is no product that matches the search criteria.',{wait:4000})
+        const noResultsMsg = $('p=There is no product that matches the search criteria.')
+        expect(noResultsMsg).toBeDisplayed()
     });
 });
