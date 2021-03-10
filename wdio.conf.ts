@@ -211,14 +211,14 @@ export const config: WebdriverIO.Config = {
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)
      */
-     afterHook: function (test, context, { error, result, duration, passed, retries }) {
-     },
+    //  afterHook: function (test, context, { error, result, duration, passed, retries }) {
+    //  },
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-    afterTest: function (test, context, { error, result, duration, passed, retries }) {
-        browser.reloadSession()
-    },
+    // afterTest: function (test, context, { error, result, duration, passed, retries }) {
+    //     browser.reloadSession()
+    // },
 
 
     /**

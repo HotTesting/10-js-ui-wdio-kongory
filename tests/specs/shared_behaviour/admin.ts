@@ -1,6 +1,6 @@
 import { shared } from './user'
 
-describe('Admin', function () {
+describe.skip('Admin', function () {
 
     it('can do some admin stuff', function () {
         console.log('admin')

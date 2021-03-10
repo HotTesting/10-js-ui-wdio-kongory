@@ -20,7 +20,7 @@ function addToCart(price: number) {
     expect($('#cart-total')).toHaveTextContaining(`1 item(s) - $${price}`)
 }
 
-describe('Items for unregistered user', function () {
+describe.skip('Items for unregistered user', function () {
     beforeEach(function () {
         browser.url('/mp3-players')
         browser.pause(3000)
@@ -35,7 +35,7 @@ describe('Items for unregistered user', function () {
     })
 })
 
-describe('Items for registered user', function () {
+describe.skip('Items for registered user', function () {
     let userEmail: string
     let userPassword: string
 
@@ -72,7 +72,6 @@ describe('Items for registered user', function () {
     })
 
     beforeEach(function () {
-        browser.reloadSession()
         browser.url('/index.php?route=account/login')
         browser.pause(3000)
 

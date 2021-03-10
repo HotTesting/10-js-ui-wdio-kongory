@@ -1,4 +1,4 @@
-describe("Product return", function () {
+describe.skip("Product return", function () {
     it("can be submited", function () {
         browser.url("/index.php?route=account/return/add")
         browser.pause(4000)
@@ -40,7 +40,7 @@ describe("Product return", function () {
     });
 });
 
-describe("Gift Certificate", function () {
+describe.skip("Gift Certificate", function () {
     it("can be purchased", function () {
         browser.url('/index.php?route=account/voucher')
 
@@ -73,7 +73,7 @@ describe("Gift Certificate", function () {
     });
 });
 
-describe("Contact us form", function () {
+describe.skip("Contact us form", function () {
     it("must send messages to shop administration", function () {
         browser.url('/index.php?route=information/contact')
 
@@ -93,7 +93,7 @@ describe("Contact us form", function () {
     });
 });
 
-describe("Items search", function () {
+describe.skip("Items search", function () {
     it("should show results in case multiple items matches", function () {
         browser.url('/')
 

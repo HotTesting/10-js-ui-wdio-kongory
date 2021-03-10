@@ -1,4 +1,4 @@
-describe('Website', function () {
+describe.skip('Website', function () {
     const locator = '.logo'
     const locator2 = '.logo'
 
