@@ -1,4 +1,5 @@
 export const config: WebdriverIO.Config = {
+    //automationProtocol: 'devtools',
     //
     // ====================
     // Runner Configuration
@@ -17,7 +18,11 @@ export const config: WebdriverIO.Config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './tests/specs/**/*.ts'
+        // './test/specs/**/*.spec.ts'
+        // './test/specs/checkout.spec.ts'
+        './test/specs/mocks/example.spec.ts'
+        //'test/specs/smoke.spec.ts'
+        //'./tests/specs/**/*.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -199,8 +204,9 @@ export const config: WebdriverIO.Config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    // beforeTest: function (test, context) {
-    // },
+    beforeTest: function (test, context) {
+        browser.url('/')
+    },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
@@ -216,9 +222,9 @@ export const config: WebdriverIO.Config = {
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-    // afterTest: function (test, context, { error, result, duration, passed, retries }) {
-    //     browser.reloadSession()
-    // },
+    afterTest: function (test, context, { error, result, duration, passed, retries }) {
+        browser.reloadSession()
+    },
 
 
     /**

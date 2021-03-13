@@ -3,14 +3,14 @@ import * as faker from 'faker';
 function addToComparison() {
     let players = ['iPod Classic', 'iPod Nano']
 
-    const ipodClassicCompareButton = $(`//a[text()='${players[0]}']/ancestor::div[@class='product-thumb']//button[@data-original-title='Compare this Product']`)
+    const ipodClassicCompareButton = $$('.product-layout').find(el => el.$('h4').getText() === 'iPod Classic').$('[data-original-title="Compare this Product"]')
     ipodClassicCompareButton.click()
 
     const ipodNanoCompareButton = $(`//a[text()='${players[1]}']/ancestor::div[@class='product-thumb']//button[@data-original-title='Compare this Product']`)
     ipodNanoCompareButton.click()
 
     const productCompare = $('a=Product Compare (2)')
-    expect(productCompare).toBeDisplayed({ wait: 3000 })
+    expect(productCompare).toBeDisplayed({ wait: 5000 })
 }
 
 function addToCart(price: number) {
@@ -40,6 +40,7 @@ describe.skip('Items for registered user', function () {
     let userPassword: string
 
     before(function () {
+        browser.reloadSession()
         browser.url('/index.php?route=account/register')
         browser.pause(4000)
 
@@ -72,6 +73,7 @@ describe.skip('Items for registered user', function () {
     })
 
     beforeEach(function () {
+        browser.reloadSession()
         browser.url('/index.php?route=account/login')
         browser.pause(3000)
 

@@ -12,7 +12,7 @@ class Counter {
 let counter = new Counter();
 
 console.log(`${counter.c} - file parsing`);
-describe(`parent DESCRIBE block`, function () {
+describe.skip(`parent DESCRIBE block`, function () {
     console.log(
         `${counter.c} - file parsing - reading content of describe block`
     );
@@ -65,7 +65,7 @@ describe(`parent DESCRIBE block`, function () {
     // DATAPROVIDER
     let dataCollection = [1, 2, 3, 4, 5];
     dataCollection.map(data => {
-        it(`${counter.c} TEST for ${data}`, function () {
+        it.skip(`${counter.c} TEST for ${data}`, function () {
             console.log(`TEST number ${data} executed!`);
         });
     });
