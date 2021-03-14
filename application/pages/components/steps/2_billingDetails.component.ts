@@ -26,9 +26,14 @@ export class BillingDetailsComponent {
         this.root.$('#input-payment-zone').selectByVisibleText(data.region)
     }
 
+    chooseDifferentAddresses() {
+        const checkbox = $('input[name="shipping_address"]')
+        checkbox.click()
+    }
+
     continue() {
         const continueButton = this.root.$('input[type="button"][value="Continue"]#button-guest')
         expect(continueButton).toBeVisible({ message: 'Expected Continue button to be visible' })
         continueButton.click()
     }
-} 
+}

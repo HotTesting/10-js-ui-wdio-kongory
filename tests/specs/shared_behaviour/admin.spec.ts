@@ -1,4 +1,4 @@
-import { shared } from './user.rename'
+import { shared } from './user.spec'
 
 describe.skip('Admin', function () {
 

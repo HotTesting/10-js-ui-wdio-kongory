@@ -1,4 +1,4 @@
-export const config: WebdriverIO.Config = {
+export const config = {
     //automationProtocol: 'devtools',
     //
     // ====================
@@ -19,10 +19,11 @@ export const config: WebdriverIO.Config = {
     //
     specs: [
         // './test/specs/**/*.spec.ts'
-        // './test/specs/checkout.spec.ts'
-        './test/specs/mocks/example.spec.ts'
+        // './tests/specs/checkout.spec.ts'
+        // './test/specs/mocks/example.spec.ts'
         //'test/specs/smoke.spec.ts'
         //'./tests/specs/**/*.ts'
+        './tests/specs/pageObjectTests/**.spec.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -186,8 +187,11 @@ export const config: WebdriverIO.Config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {
-    // },
+     before: function (capabilities, specs) {
+        beforeEach(function () {
+            browser.url('/')
+        }) 
+},
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
@@ -204,9 +208,8 @@ export const config: WebdriverIO.Config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    beforeTest: function (test, context) {
-        browser.url('/')
-    },
+    // beforeTest: function (test, context) {
+    // },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)

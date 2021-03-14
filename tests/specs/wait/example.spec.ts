@@ -6,7 +6,7 @@ describe('Wait', function () {
             browser.waitUntil(() => {
                 console.count('Wait iteration#')
                 try {
-                    return $('nonexist').isPresent()
+                    return $('nonexist').isExisting()
                 } catch {
                     return false
                 }
@@ -14,12 +14,12 @@ describe('Wait', function () {
             expect($('nonexist')).toBeExisting()
         } finally {
             console.timeEnd('waitTook')
-        }  
-        
+        }
+
     })
 
     it.skip('1', function () {
-        while(true) {
+        while (true) {
             console.count('#')
             $('body').click()
         }

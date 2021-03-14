@@ -1,6 +1,6 @@
 import { App } from "../../application/application"
 
-describe.skip('Item', function () {
+describe('Item', function () {
 
     it('can be purchased', function () {
         browser.url('/')
@@ -40,4 +40,4 @@ describe.skip('Item', function () {
 
         expect(app.confirmation.isOpened()).toBeTruthy()
     })
-}) 
+})
